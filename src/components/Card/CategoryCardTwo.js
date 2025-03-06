@@ -26,7 +26,7 @@ export default function CategoryCardTwo({ category }) {
         <Link href={category.href} className="hl-btn circle-btn flex-shrink-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="25"
+            width="250"
             height="18"
             viewBox="0 0 25 18"
             fill="none"
