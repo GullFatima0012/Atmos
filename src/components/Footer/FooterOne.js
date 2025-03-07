@@ -5,7 +5,7 @@ import logo from "@/../public/assets/images/logo.svg";
 
 export default function FooterOne() {
   return (
-    <footer className="footer-area pt-80">
+  <footer className="footer-area pt-80 ">
       <div className="container">
         {/* <!-- Footer Top --> */}
         <div className="row footer-top row-gap-lg-4 row-gap-5">
@@ -199,7 +199,7 @@ export default function FooterOne() {
               </ul>
             </div>
           </div>
-          <div className="col-md-6 col-xl-3">
+          {/* <div className="col-md-6 col-xl-3">
             <div className="footer-widget widget-more">
               <h4 className="widget-title text-uppercase">
                 Download the App for <br /> streaming.
@@ -243,7 +243,7 @@ export default function FooterOne() {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         {/* <!-- Footer Bottom --> */}
         <div className="row footer-bottom row-gap-3">

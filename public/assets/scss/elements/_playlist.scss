@@ -10,6 +10,10 @@
     @media #{$sm_device}{
       display: block;
     }
+    .no-border-radius {
+      border-radius: 0 !important;
+    }
+    
     h3 {
       font-size: 50px;
       font-weight: 300 !important;

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function CategoryCard({ category }) {
   return (
-    <div className="category-card"  style={{ backgroundColor: "#7272726B" }}>
+    <div className="category-card"  style={{backgroundColor:"#F1EFE7"}}>
       <div className="thumbnail">
         <Image
           src={category.pictures?.sizes?.[0]?.link}

@@ -38,7 +38,7 @@ export default function MovieList() {
   }
 
   return (
-    <div className="genres-area py-80">
+    <div className="genres-area py-80" style={{backgroundColor:"#F1EFE7"}}>
       <div className="container">
         {movies && movies.length > 0 && (
           <div className="row row-gap-4">

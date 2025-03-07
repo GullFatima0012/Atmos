@@ -57,16 +57,16 @@ export default function CategoryOne() {
   }
 
   return (
-    <div className="category pt-80 pb-80 mt-10">
+    <div className="genres-area py-80" style={{backgroundColor:"#F1EFE7"}}>
       <div className="container mb-45">
         <div className="d-flex justify-content-center mb-40">
           <div className="section-header">
-            <h3 className="section-title mt-2 mb-0 lh-1">Browse by category</h3>
+            <h3 className="section-title mt-2 mb-0 lh-1 text-dark">Browse byy category</h3>
           </div>
         </div>
       </div>
       {categories && categories.length > 0 && (
-      <Swiper {...swiperOptions} className="swiper categories-slider" style={{ backgroundColor: "#7272726B" }}>
+      <Swiper {...swiperOptions} className="swiper categories-slider" >
 
           {categories.map((category, index) => (
             <SwiperSlide key={index}>
