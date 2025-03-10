@@ -216,7 +216,7 @@ export default function MenuOne() {
               </form>
             </div>
           </div>
-          <Link href="login" className="hl-btn btn-base text-uppercase d-xl-inline-block d-none">
+          <Link href="login" className="hl-btn btn-base text-lowecase text-dark d-xl-inline-block d-none" style={{backgroundColor:"#FFF"}}>
             <span>{data.btnText}</span>
           </Link>
           <button

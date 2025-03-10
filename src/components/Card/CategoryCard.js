@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function CategoryCard({ category }) {
   return (
-    <div className="category-card"  style={{backgroundColor:"#F1EFE7"}}>
+    <div className="category-card" >
       <div className="thumbnail">
         <Image
           src={category.pictures?.sizes?.[0]?.link}
@@ -14,8 +14,9 @@ export default function CategoryCard({ category }) {
         />
       </div>
       <div className="details">
-        <h4 className="title lh-1 mb-0">{category?.name}</h4>
-        <Link href={category?.uri} className="hl-btn circle-btn flex-shrink-0">
+        <h4 className="title  mb-0 text-white">{category?.name}</h4>
+        <Link href={`/category/${category.uri.split("/").pop()}`} className="hl-btn circle-btn flex-shrink-0">
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25"

@@ -10,11 +10,11 @@ const menuOneData = {
       href: "/",
     },
     {
-      name: "Movies",
+      name: "Videos",
       href: "#",
       subMenus: [
         {
-          name: "Movie List",
+          name: "Videos List",
           href: "movie-list",
         },
         {
@@ -39,7 +39,7 @@ const menuTwoData = {
   primaryMenus: [
     { name: "Home", href: "/" },
     { name: "Search", href: "category" },
-    { name: "Movies", href: "movie-list" },
+    { name: "Videos", href: "movie-list" },
     { name: "Add To Playlist", href: "playlist" },
     { name: "Tv Showes", href: "pagination-one" },
     { name: "Games", href: "pagination-two" },

@@ -11,7 +11,12 @@ import HeroTwoSlideImageOne from "@/../public/assets/images/hero/ht-banner-img-1
 const heroOneData = {
   slides: [
     {
-      videoSrc: "assets/video/video.mp4",
+      videoSrc: `<iframe 
+      src="https://player.vimeo.com/video/1064196343?h=25f6810187&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+      frameBorder="0"
+      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+      style="width: 100%; height: 100%; border-radius: 10px;"
+      title="360 video 2"></iframe>`,
       image: HeroSlideImageTwo,
       rating: "4.9",
       duration: "02h 30m",

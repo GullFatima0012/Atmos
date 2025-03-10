@@ -4,7 +4,7 @@ import MovieList from "@/components/Movie/MovieList";
 
 export default function Movies() {
   const breadcrumb = {
-    title: "Movie List",
+    title: "Videos List",
     links: [
       { name: "Home", href: "/" },
       { name: "Movie List", href: "#" },

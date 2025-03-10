@@ -1,6 +1,7 @@
 export default function Login() {
   return (
-    <div class="registration-area my-80">
+    <div className="genres-area py-80" style={{ backgroundColor: "#F1EFE7" }} >
+    <div class="registration-area my-80 " >
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-6">
@@ -79,6 +80,7 @@ export default function Login() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

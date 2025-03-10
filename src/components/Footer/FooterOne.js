@@ -123,44 +123,44 @@ export default function FooterOne() {
               <h4 className="widget-title text-uppercase lh-1">Browse categories</h4>
               <ul className="footer-widget--list d-inline-block">
                 <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link">
+                  <Link href="category" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
                     Action
                   </Link>
                 </li>
                 <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link">
+                  <Link href="category" className="footer-widget--link"style={{ textDecoration: "none", color: "inherit" }}>
                     Comedy
                   </Link>
                 </li>
                 <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link">
+                  <Link href="category" className="footer-widget--link"style={{ textDecoration: "none", color: "inherit" }}>
                     Crime
                   </Link>
                 </li>
                 <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link">
+                  <Link href="category" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
                     Romance
                   </Link>
                 </li>
               </ul>
               <ul className="footer-widget--list d-inline-block ms-5">
                 <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link">
+                  <Link href="category" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
                     Family
                   </Link>
                 </li>
                 <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link">
+                  <Link href="category" style={{ textDecoration: "none", color: "inherit" }}className="footer-widget--link">
                     Animation
                   </Link>
                 </li>
                 <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link">
+                  <Link href="category" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
                     Drama
                   </Link>
                 </li>
                 <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link">
+                  <Link href="category" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
                     Scientific
                   </Link>
                 </li>
@@ -172,27 +172,27 @@ export default function FooterOne() {
               <h4 className="widget-title text-uppercase lh-1">Help</h4>
               <ul className="footer-widget--list">
                 <li className="footer-widget--item">
-                  <Link href="about" className="footer-widget--link">
+                  <Link href="about" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
                     About Us
                   </Link>
                 </li>
                 <li className="footer-widget--item">
-                  <Link href="pricing" className="footer-widget--link">
+                  <Link href="pricing" className="footer-widget--link"  style={{ textDecoration: "none", color: "inherit" }}>
                     Pricing Plan
                   </Link>
                 </li>
                 <li className="footer-widget--item">
-                  <Link href="privacy-policy" className="footer-widget--link">
+                  <Link href="privacy-policy" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
                     Privacy Policy
                   </Link>
                 </li>
                 <li className="footer-widget--item">
-                  <Link href="faq" className="footer-widget--link">
+                  <Link href="faq" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
                     Faq
                   </Link>
                 </li>
                 <li className="footer-widget--item">
-                  <Link href="pricing" className="footer-widget--link">
+                  <Link href="pricing" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
                     Account & Billing
                   </Link>
                 </li>
@@ -248,20 +248,21 @@ export default function FooterOne() {
         {/* <!-- Footer Bottom --> */}
         <div className="row footer-bottom row-gap-3">
           <div className="col-sm-6 text-sm-start order-4 order-sm-0">
-            <p style={{ color: "black !important" }} className="mb-0">© atmos {new Date().getFullYear()}</p>
+            <p style={{ color: "black !important" }} className="mb-0">© Atmos {new Date().getFullYear()}</p>
           </div>
           <div className="col-sm-6 footer-widget text-sm-end">
             <ul className="footer-widget--list">
               <li className="footer-widget--item d-inline-block mb-0 me-4">
-                <Link href="privacy-policy" className="footer-widget--link">
+                <Link href="privacy-policy" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
                   Privacy Policy
                 </Link>
               </li>
               <li className="footer-widget--item d-inline-block">
-                <Link href="/" className="footer-widget--link">
-                  Site Maps
-                </Link>
-              </li>
+  <Link href="/" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
+    Site Maps
+  </Link>
+</li>
+
             </ul>
           </div>
         </div>

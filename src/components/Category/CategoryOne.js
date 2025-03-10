@@ -27,29 +27,40 @@ export default function CategoryOne() {
     },
   };
 
+ 
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null); // ✅ Added success state
 
   useEffect(() => {
-    setLoading(true);
-    try {
-      const fecthCategories = async () => {
+    const fetchCategories = async () => {
+      setLoading(true);
+      setError(null);
+      setSuccess(null); // Reset both states before fetching
+
+      try {
         const response = await fetch("https://api.vimeo.com/categories", {
           headers: {
-            Authorization: `Bearer abd8e7cb9bdeff107bb9bb03c6e05505`,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_VIMEO_ACCESS_TOKEN}`,
           },
         });
 
-        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
+        }
 
-        setCategories(data?.data);
-      };
-      fecthCategories();
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
+        const data = await response.json();
+        setCategories(data?.data || []);
+        setSuccess("Connected successfully! ✅"); // ✅ Set success message
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCategories();
   }, []);
 
   if (loading) {
@@ -57,20 +68,23 @@ export default function CategoryOne() {
   }
 
   return (
-    <div className="genres-area py-80" style={{backgroundColor:"#F1EFE7"}}>
+    <div className="genres-area py-80" style={{ backgroundColor: "#F1EFE7" }}>
       <div className="container mb-45">
         <div className="d-flex justify-content-center mb-40">
           <div className="section-header">
-            <h3 className="section-title mt-2 mb-0 lh-1 text-dark">Browse byy category</h3>
+            <h3 className="section-title mt-2 mb-0 lh-1 text-dark">Browse by Category</h3>
           </div>
         </div>
       </div>
-      {categories && categories.length > 0 && (
-      <Swiper {...swiperOptions} className="swiper categories-slider" >
 
+
+
+      {/* Show Swiper only if categories exist and no error */}
+      {!error && categories.length > 0 && (
+        <Swiper {...swiperOptions} className="swiper categories-slider">
           {categories.map((category, index) => (
             <SwiperSlide key={index}>
-              <CategoryCard  style={{ backgroundColor: "#7272726B !important"}} category={category} />
+              <CategoryCard style={{ backgroundColor: "#7272726B !important" }} category={category} />
             </SwiperSlide>
           ))}
         </Swiper>
