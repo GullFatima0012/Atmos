@@ -13,7 +13,7 @@ export default function CategoryList() {
       const fecthCategories = async () => {
         const response = await fetch("https://api.vimeo.com/categories", {
           headers: {
-            Authorization: `Bearer abd8e7cb9bdeff107bb9bb03c6e05505`,
+            Authorization: `Bearer 9e60951cd4b1c4c98a1e159c43eafd59`,
           },
         });
 
@@ -33,7 +33,7 @@ export default function CategoryList() {
     return <Loader />;
   }
   return (
-    <div className="genres-area py-80" style={{ backgroundColor: "#F1EFE7" }} >
+  <div className="genres-area py-80" style={{ backgroundColor: "#F1EFE7" }} >
       <h3 className="section-title text-dark text-center mb-1">Browse by category </h3>
       {categories && categories.length > 0 && (
         <div className="row mt-4 row-gap-4">

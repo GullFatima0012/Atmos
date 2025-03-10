@@ -42,7 +42,7 @@ export default function CategoryOne() {
       try {
         const response = await fetch("https://api.vimeo.com/categories", {
           headers: {
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_VIMEO_ACCESS_TOKEN}`,
+            Authorization: `Bearer 9e60951cd4b1c4c98a1e159c43eafd59`,
           },
         });
 

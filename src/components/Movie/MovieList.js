@@ -26,7 +26,7 @@ export default function MovieList() {
       const response = await fetch(`https://api.vimeo.com/me/videos`, {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          Authorization: `Bearer 9e60951cd4b1c4c98a1e159c43eafd59`,
           "Content-Type": "application/json",
         },
       });
