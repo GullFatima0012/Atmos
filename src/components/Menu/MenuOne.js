@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
+import Button from "@mui/material/Button";
 import { useThemeContext } from "@/context//ThemeContext";
 
 import { menuOneData as data } from "@/data/menu";
@@ -216,9 +216,11 @@ export default function MenuOne() {
               </form>
             </div>
           </div>
-          <Link href="login" className="hl-btn btn-base text-lowecase text-dark d-xl-inline-block d-none" style={{backgroundColor:"#FFF"}}>
-            <span>{data.btnText}</span>
-          </Link>
+          <Link href="register"className="text-lowercase text-dark d-xl-inline-block d-none" style={{ borderRadius: "20px" }}>
+      <Button className="px-3 py-2"sx={{ textTransform: "none",borderRadius: "20px",  color: "black", backgroundColor: "#F1EFE7" }}>
+      Get Started
+      </Button>
+    </Link>
           <button
             id="navigation-button"
             className="menu-button menu menu_btn d-lg-none border-0 bg-transparent"

@@ -13,25 +13,31 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const navbarHeight = document.querySelector(".header").offsetHeight;
+      const header = document.querySelector(".header");
+      if (!header) return; // Prevents the error
+  
+      const navbarHeight = header.offsetHeight;
+  
       if (window.scrollY > navbarHeight + 150) {
         setIsFixedTop(true);
       } else if (window.scrollY < navbarHeight) {
         setIsFixedTop(false);
       }
+  
       if (window.scrollY > window.innerHeight) {
         setShowScrollTop(true);
       } else {
         setShowScrollTop(false);
       }
     };
-
+  
     window.addEventListener("scroll", handleScroll);
-
+  
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
 
   const toggleSubMenu = (index, event) => {
     event.preventDefault();

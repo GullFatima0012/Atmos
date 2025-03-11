@@ -1,86 +1,128 @@
-export default function Login() {
+"use client";
+
+import { useFormik } from "formik";
+import * as yup from "yup";
+import { TextField, Button, Typography, Box, InputAdornment, IconButton, Container, Paper } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useState } from "react";
+import Image from "next/image";
+import logo from "@/../public/assets/images/logo.svg";
+import Link from "next/link";
+
+// Validation Schema
+const validationSchema = yup.object({
+  email: yup.string().email("The Email you entered is not a valid format!").required("Please enter Email Address!"),
+  password: yup.string().min(6, "Password must be at least 6 characters").required("Please enter your password!"),
+});
+
+export default function Signup() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  // Formik Hook
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      console.log("Form Values:", values);
+      // Add your login API call here
+    },
+  });
+
   return (
-    <div className="genres-area py-80" style={{ backgroundColor: "#F1EFE7" }} >
-    <div class="registration-area my-80 " >
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-6">
-            <div class="registration-wrap holaa-form-wrapper">
-              <h5 class="inner-small-title mb-0">Login</h5>
-              <p class="mb-4 pb-2">Welcome! Log in to your account</p>
-              <form action="#">
-                <label class="single-input-field style-border">
-                  <span>Name or Email</span>
-                  <input type="text" placeholder="Name OR Email" />
-                </label>
-                <label class="single-input-field style-border">
-                  <span>Password</span>
-                  <input type="text" placeholder="Password" />
-                  <svg
-                    class="input-icon"
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.11998 9.8316C6.61803 9.33053 6.3125 8.64962 6.3125 7.88579C6.3125 6.3555 7.54511 5.12201 9.07453 5.12201C9.83138 5.12201 10.528 5.42842 11.0212 5.92949"
-                      stroke="#818181"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M11.785 8.37598C11.5825 9.50209 10.6956 10.3908 9.57031 10.595"
-                      stroke="#818181"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M4.40889 12.5427C3.02351 11.455 1.85026 9.86624 1 7.88551C1.85899 5.89604 3.0401 4.29853 4.43421 3.2021C5.81959 2.10567 7.41797 1.51031 9.07484 1.51031C10.7413 1.51031 12.3388 2.1144 13.7329 3.21869"
-                      stroke="#818181"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M15.5773 5.13885C16.1779 5.93674 16.7061 6.8577 17.1504 7.88517C15.4333 11.8632 12.3989 14.2595 9.07556 14.2595C8.3222 14.2595 7.57931 14.1373 6.86523 13.899"
-                      stroke="#818181"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M15.9614 1L2.19141 14.77"
-                      stroke="#818181"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </label>
-                <div class="check-btn">
-                  <label class="checkbox-wrap">
-                    <input type="checkbox" id="css" checked />
-                    <span>Remember me</span>
-                  </label>
-                  <div class="btn-wrap mt-sm-4 pt-lg-3 mt-4">
-                    <button
-                      type="submit"
-                      class="hl-btn medium-btn btn-base text-uppercase lh-1"
-                    >
-                      <span class="pt-0">Log In</span>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+    <Box
+      sx={{
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        bgcolor: "#F5F3EB",
+      }}
+    >
+      <Paper
+        elevation={0}
+        sx={{
+          p: 4,
+          textAlign: "center",
+          borderRadius: 3,
+          width: "100%",
+          maxWidth: 400,
+          bgcolor: "transparent", // Removes the white background
+        }}
+      >
+        {/* Logo */}
+        <Box display="flex" justifyContent="center" mb={2}>
+          <Image src={logo} alt="Logo" width={150} height={50} />
+        </Box>
+
+        <Typography sx={{ color: "black" }} variant="h5" fontWeight="bold" mb={3}>
+          Log in Your Account
+        </Typography>
+
+        {/* Form */}
+        <form onSubmit={formik.handleSubmit}>
+          {/* Email Input */}
+          <TextField
+            fullWidth
+            name="email"
+            label="Username or Email"
+            variant="outlined"
+            sx={{ mb: 2, bgcolor: "transparent", borderRadius: 1 }}
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+          />
+
+          {/* Password Input */}
+          <TextField
+            fullWidth
+            name="password"
+            label="Password"
+            type={showPassword ? "text" : "password"}
+            variant="outlined"
+            sx={{ mb: 2, bgcolor: "transparent", borderRadius: 1 }}
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton onClick={() => setShowPassword(!showPassword)}>
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
+
+          {/* Submit Button */}
+          <Button
+            type="submit"
+            variant="contained"
+            fullWidth
+            sx={{ bgcolor: "black", color: "white", borderRadius: 3, py: 1.5, fontSize: 16, fontWeight: "bold" }}
+          >
+            Login
+          </Button>
+        </form>
+
+        {/* Sign Up Link */}
+        <Typography variant="body2" mt={2} color="textSecondary">
+          Don't have an account?{" "}
+          <Link href="/register" passHref style={{ textDecoration: "none" }}>
+            <Typography component="span" sx={{ fontWeight: "bold", cursor: "pointer", color: "black" }}>
+              Sign Up
+            </Typography>
+          </Link>
+        </Typography>
+      </Paper>
+    </Box>
   );
 }
