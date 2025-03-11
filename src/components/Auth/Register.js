@@ -87,7 +87,7 @@ export default function Signup() {
           fullWidth
           name="password"
           label="Password"
-          type={showPassword ? "text" : "password"}
+          type={showPassword ? "text" : "Password"}
           variant="outlined"
           sx={{ mb: 2, bgcolor: "transparent", borderRadius: 1 }}
           value={formik.values.password}
