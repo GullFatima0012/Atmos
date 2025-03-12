@@ -8,7 +8,11 @@ import { useState } from "react";
 import Image from "next/image";
 import logo from "@/../public/assets/images/logo.svg";
 import Link from "next/link";
+import { useAtom } from "jotai";   // ✅ Import useAtom from Jotai
+import { tokenAtom } from "@/atoms/authAtom";  // ✅ Import tokenAtom
+import { useRouter } from 'next/navigation';
 
+ 
 // Validation Schema
 const validationSchema = yup.object({
   email: yup.string().email("The Email you entered is not a valid format!").required("Please enter Email Address!"),
@@ -17,6 +21,9 @@ const validationSchema = yup.object({
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
+  const [token, setToken] = useAtom(tokenAtom);  // ✅ Use Jotai atom instead of useState
+const router=useRouter();
+  console.log("Token:", token);
 
   // Formik Hook
   const formik = useFormik({
@@ -27,33 +34,23 @@ export default function Signup() {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       console.log("Form Values:", values);
-      // Add your login API call here
+
+      // Simulate API call and store token
+      const fakeToken = "1234";  
+      setToken(fakeToken);  // ✅ Store in Jotai global state
+
+      if (!fakeToken) {
+        console.error("No token found! User not authenticated.");
+        return;
+      }
+      // ✅ Use router.push instead of redirect
+  router.push('/movie-list');
     },
   });
 
   return (
-    <Box
-      sx={{
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        bgcolor: "#F5F3EB",
-      }}
-    >
-      <Paper
-        elevation={0}
-        sx={{
-          p: 4,
-          textAlign: "center",
-          borderRadius: 3,
-          width: "100%",
-          maxWidth: 400,
-          bgcolor: "transparent", // Removes the white background
-        }}
-      >
-        {/* Logo */}
+    <Box sx={{ width: "100vw", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", bgcolor: "#F5F3EB" }}>
+      <Paper elevation={0} sx={{ p: 4, textAlign: "center", borderRadius: 3, width: "100%", maxWidth: 400, bgcolor: "transparent" }}>
         <Box display="flex" justifyContent="center" mb={2}>
           <Image src={logo} alt="Logo" width={150} height={50} />
         </Box>
@@ -62,7 +59,6 @@ export default function Signup() {
           Log in Your Account
         </Typography>
 
-        {/* Form */}
         <form onSubmit={formik.handleSubmit}>
           {/* Email Input */}
           <TextField
@@ -103,17 +99,11 @@ export default function Signup() {
           />
 
           {/* Submit Button */}
-          <Button
-            type="submit"
-            variant="contained"
-            fullWidth
-            sx={{ bgcolor: "black", color: "white", borderRadius: 3, py: 1.5, fontSize: 16, fontWeight: "bold" }}
-          >
+          <Button type="submit" variant="contained" sx={{ bgcolor: "black", color: "white", borderRadius: 2, py: 2.2, px: 4.2, fontSize: 14, fontWeight: "bold", minWidth: "auto" }}>
             Login
           </Button>
         </form>
 
-        {/* Sign Up Link */}
         <Typography variant="body2" mt={2} color="textSecondary">
           Don't have an account?{" "}
           <Link href="/register" passHref style={{ textDecoration: "none" }}>

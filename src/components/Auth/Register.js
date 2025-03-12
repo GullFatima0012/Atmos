@@ -1,5 +1,5 @@
 "use client";
-
+import { tokenAtom } from "@/atoms/authAtom";  // Import token state
 import Link from "next/link";
 import { TextField, Button, Typography, Box, InputAdornment, IconButton, Paper } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
@@ -132,13 +132,22 @@ export default function Signup() {
 
         {/* Submit Button */}
         <Button
-          variant="contained"
-          fullWidth
-          sx={{ bgcolor: "black", color: "white", borderRadius: 3, py: 1.5, fontSize: 16, fontWeight: "bold" }}
-          onClick={formik.handleSubmit} // ✅ Use formik.handleSubmit
-        >
-          Get Started
-        </Button>
+  variant="contained"
+  sx={{
+    bgcolor: "black",
+    color: "white",
+    borderRadius: 2,  // Slightly smaller radius
+    py:1.2,          // Reduced padding (height)
+    px: 2.6,            // Added horizontal padding for balance
+    fontSize: 14,     // Smaller font size
+    fontWeight: "bold",
+    minWidth: "auto"  // Prevents full width expansion
+  }}
+  onClick={formik.handleSubmit}
+>
+  Get Started
+</Button>
+
 
         {/* Login Link */}
         <Link href="/login" passHref>
