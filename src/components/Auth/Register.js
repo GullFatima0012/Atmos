@@ -1,39 +1,55 @@
 "use client";
-import { tokenAtom } from "@/atoms/authAtom";  // Import token state
+import { tokenAtom } from "@/atoms/authAtom";  
 import Link from "next/link";
-import { TextField, Button, Typography, Box, InputAdornment, IconButton, Paper } from "@mui/material";
+import { TextField, Button, Typography, Box, InputAdornment, IconButton, Paper, Alert } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
 import Image from "next/image";
 import logo from "@/../public/assets/images/logo.svg";
 import { useFormik } from "formik";
-import * as yup from "yup"; // ✅ Import yup
+import * as yup from "yup"; 
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/lib/firebaseConfig";
+import { useRouter } from 'next/navigation';
 
 // Validation Schema
 const validationSchema = yup.object({
   email: yup.string().email("The Email you entered is not a valid format!").required("Please enter Email Address!"),
   password: yup.string().min(6, "Password must be at least 6 characters").required("Please enter your password!"),
-  Confirmpassword: yup
+  confirmPassword: yup
     .string()
-    .oneOf([yup.ref("password")], "Passwords must match") // ✅ Ensure it matches password
+    .oneOf([yup.ref("password")], "Passwords must match")
     .required("Confirm your password!"),
 });
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+  const [alertMessage, setAlertMessage] = useState(null);
+  const [alertType, setAlertType] = useState("success");
+const router=useRouter();
   // Formik Hook
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
-      Confirmpassword: "",
+      confirmPassword: "",
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.log("Form Values:", values);
-      // Add your login API call here
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
+        console.log("User Signed Up:", userCredential.user);
+        router.push('/login');
+        // Show success message
+        setAlertMessage("User signed up successfully!");
+        setAlertType("success");
+      } catch (error) {
+        // Show error message
+        setAlertMessage(error.message);
+        setAlertType("error");
+      }
     },
   });
 
@@ -56,10 +72,9 @@ export default function Signup() {
           borderRadius: 3,
           width: "100%",
           maxWidth: 400,
-          bgcolor: "transparent", // ✅ Removes the white background
+          bgcolor: "transparent",
         }}
       >
-        {/* Logo */}
         <Box display="flex" justifyContent="center" mb={2}>
           <Image src={logo} alt="Logo" width={150} height={50} />
         </Box>
@@ -67,6 +82,13 @@ export default function Signup() {
         <Typography variant="h5" sx={{ color: "black" }} fontWeight="bold" mb={3}>
           Create an Account
         </Typography>
+
+        {/* Alert Message */}
+        {alertMessage && (
+          <Alert severity={alertType} sx={{ my: 2 }}>
+            {alertMessage}
+          </Alert>
+        )}
 
         {/* Email Input */}
         <TextField
@@ -87,7 +109,7 @@ export default function Signup() {
           fullWidth
           name="password"
           label="Password"
-          type={showPassword ? "text" : "Password"}
+          type={showPassword ? "text" : "password"}
           variant="outlined"
           sx={{ mb: 2, bgcolor: "transparent", borderRadius: 1 }}
           value={formik.values.password}
@@ -109,16 +131,16 @@ export default function Signup() {
         {/* Confirm Password Input */}
         <TextField
           fullWidth
-          name="Confirmpassword"
+          name="confirmPassword"
           label="Confirm Password"
           type={showConfirmPassword ? "text" : "password"}
           variant="outlined"
           sx={{ mb: 3, bgcolor: "transparent", borderRadius: 1 }}
-          value={formik.values.Confirmpassword}
+          value={formik.values.confirmPassword}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          error={formik.touched.Confirmpassword && Boolean(formik.errors.Confirmpassword)}
-          helperText={formik.touched.Confirmpassword && formik.errors.Confirmpassword}
+          error={formik.touched.confirmPassword && Boolean(formik.errors.confirmPassword)}
+          helperText={formik.touched.confirmPassword && formik.errors.confirmPassword}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -132,22 +154,21 @@ export default function Signup() {
 
         {/* Submit Button */}
         <Button
-  variant="contained"
-  sx={{
-    bgcolor: "black",
-    color: "white",
-    borderRadius: 2,  // Slightly smaller radius
-    py:1.2,          // Reduced padding (height)
-    px: 2.6,            // Added horizontal padding for balance
-    fontSize: 14,     // Smaller font size
-    fontWeight: "bold",
-    minWidth: "auto"  // Prevents full width expansion
-  }}
-  onClick={formik.handleSubmit}
->
-  Get Started
-</Button>
-
+          variant="contained"
+          sx={{
+            bgcolor: "black",
+            color: "white",
+            borderRadius: 2,
+            py: 1.2,
+            px: 2.6,
+            fontSize: 14,
+            fontWeight: "bold",
+            minWidth: "auto",
+          }}
+          onClick={() => formik.handleSubmit()} // ✅ Fixed
+        >
+          Get Started
+        </Button>
 
         {/* Login Link */}
         <Link href="/login" passHref>

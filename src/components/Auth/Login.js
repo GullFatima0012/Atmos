@@ -2,28 +2,30 @@
 
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { TextField, Button, Typography, Box, InputAdornment, IconButton, Container, Paper } from "@mui/material";
+import { TextField, Button, Typography, Box, InputAdornment, IconButton, Container, Paper, Alert } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
 import Image from "next/image";
 import logo from "@/../public/assets/images/logo.svg";
 import Link from "next/link";
-import { useAtom } from "jotai";   // ✅ Import useAtom from Jotai
-import { tokenAtom } from "@/atoms/authAtom";  // ✅ Import tokenAtom
+import { useAtom } from "jotai";
+import { tokenAtom } from "@/atoms/authAtom";
 import { useRouter } from 'next/navigation';
+import { auth } from "@/lib/firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
- 
 // Validation Schema
 const validationSchema = yup.object({
-  email: yup.string().email("The Email you entered is not a valid format!").required("Please enter Email Address!"),
+  email: yup.string().email("Invalid email format!").required("Please enter your email."),
   password: yup.string().min(6, "Password must be at least 6 characters").required("Please enter your password!"),
 });
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
-  const [token, setToken] = useAtom(tokenAtom);  // ✅ Use Jotai atom instead of useState
-const router=useRouter();
-  console.log("Token:", token);
+  const [token, setToken] = useAtom(tokenAtom);
+  const router = useRouter();
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
   // Formik Hook
   const formik = useFormik({
@@ -32,19 +34,25 @@ const router=useRouter();
       password: "",
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      console.log("Form Values:", values);
+    onSubmit: async (values) => {
+      setError(null);
+      setSuccess(null);
 
-      // Simulate API call and store token
-      const fakeToken = "1234";  
-      setToken(fakeToken);  // ✅ Store in Jotai global state
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, values.email, values.password);
+        const user = userCredential.user;
+        const token = await user.getIdToken();
+        console.log("Firebase Token:", token);  // ✅ Check if token is being received
 
-      if (!fakeToken) {
-        console.error("No token found! User not authenticated.");
-        return;
+
+        setToken(token);
+        setSuccess("Login successful! Redirecting...");
+        setTimeout(() => {
+          router.push('/movie-list');
+        }, 1500);
+      } catch (error) {
+        setError("Invalid email or password. Please try again.");
       }
-      // ✅ Use router.push instead of redirect
-  router.push('/movie-list');
     },
   });
 
@@ -56,15 +64,18 @@ const router=useRouter();
         </Box>
 
         <Typography sx={{ color: "black" }} variant="h5" fontWeight="bold" mb={3}>
-          Log in Your Account
+          Log in to Your Account
         </Typography>
+
+        {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+        {success && <Alert severity="success" sx={{ mb: 2 }}>{success}</Alert>}
 
         <form onSubmit={formik.handleSubmit}>
           {/* Email Input */}
           <TextField
             fullWidth
             name="email"
-            label="Username or Email"
+            label="Email"
             variant="outlined"
             sx={{ mb: 2, bgcolor: "transparent", borderRadius: 1 }}
             value={formik.values.email}

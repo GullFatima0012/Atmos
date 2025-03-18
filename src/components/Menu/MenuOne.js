@@ -4,17 +4,24 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "@mui/material/Button";
 import { useThemeContext } from "@/context//ThemeContext";
-
+import { useAtom } from "jotai";
 import { menuOneData as data } from "@/data/menu";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
+import { tokenAtom } from "@/atoms/authAtom";
 export default function MenuOne() {
+
   const { toggleMobileMenu } = useThemeContext();
   const [showBox, setShowBox] = useState(false);
   const pathName = usePathname();
   const routePath = pathName == "/" ? pathName : pathName.replace(/^\/+/g, "");
+  const [token, setToken] = useAtom(tokenAtom);
 
+  const handleLogout = () => {
+    setToken(null);  // ✅ Clear token
+    localStorage.removeItem("authToken");  // ✅ Ensure it's removed from storage
+    window.location.reload(); // ✅ Refresh to update UI
+  };
   useEffect(() => {
     const closeSearch = () => {
       setShowBox(false);
@@ -216,11 +223,28 @@ export default function MenuOne() {
               </form>
             </div>
           </div>
-          <Link href="register"className="text-lowercase text-dark d-xl-inline-block d-none" style={{ borderRadius: "20px" }}>
-      <Button className="px-3 py-2"sx={{ textTransform: "none",borderRadius: "20px",  color: "black", backgroundColor: "#F1EFE7" }}>
-      Get Started
-      </Button>
-    </Link>
+          <div>
+      {token ? (
+        // ✅ Show Logout button if token exists
+        <Button 
+          className="px-3 py-2" 
+          sx={{ textTransform: "none", borderRadius: "20px", color: "white", backgroundColor: "red" }}
+          onClick={handleLogout}
+        >
+          Logout
+        </Button>
+      ) : (
+        // ✅ Show "Get Started" button if no token
+        <Link href="/register" className="text-lowercase text-dark d-xl-inline-block d-none" style={{ borderRadius: "20px" }}>
+          <Button 
+            className="px-3 py-2" 
+            sx={{ textTransform: "none", borderRadius: "20px", color: "black", backgroundColor: "#F1EFE7" }}
+          >
+            Get Started
+          </Button>
+        </Link>
+      )}
+    </div>
           <button
             id="navigation-button"
             className="menu-button menu menu_btn d-lg-none border-0 bg-transparent"
