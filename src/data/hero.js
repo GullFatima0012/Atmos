@@ -23,7 +23,7 @@ const heroOneData = {
       quality: "4k",
       title: "THE ARK MANS",
       description:
-        "Enjoy your favorite moves, tv show, sports, news, Live event and entertainment streaming now!",
+        "",
       btnOneText: "Watch Now",
       btnTwoText: "Play Trailer",
     },
@@ -35,7 +35,7 @@ const heroOneData = {
       quality: "4k",
       title: "ENIGM OF SHADOWS",
       description:
-        "Enjoy your favorite moves, tv show, sports, news, Live event and entertainment streaming now!",
+        "",
       btnOneText: "Watch Now",
       btnTwoText: "Play Trailer",
     },
@@ -47,7 +47,7 @@ const heroOneData = {
       quality: "4k",
       title: "The Dark Beauty",
       description:
-        "Enjoy your favorite moves, tv show, sports, news, Live event and entertainment streaming now!",
+        "",
       btnOneText: "Watch Now",
       btnTwoText: "Play Trailer",
     },
@@ -59,7 +59,7 @@ const heroOneData = {
       quality: "4k",
       title: "ENIGM OF SHADOWS",
       description:
-        "Enjoy your favorite moves, tv show, sports, news, Live event and entertainment streaming now!",
+        "",
       btnOneText: "Watch Now",
       btnTwoText: "Play Trailer",
     },
@@ -71,7 +71,7 @@ const heroOneData = {
       quality: "4k",
       title: "ENIGM OF SHADOWS",
       description:
-        "Enjoy your favorite moves, tv show, sports, news, Live event and entertainment streaming now!",
+        "",
       btnOneText: "Watch Now",
       btnTwoText: "Play Trailer",
     },
@@ -83,7 +83,7 @@ const heroOneData = {
       quality: "4k",
       title: "ENIGM OF SHADOWS",
       description:
-        "Enjoy your favorite moves, tv show, sports, news, Live event and entertainment streaming now!",
+        "",
       btnOneText: "Watch Now",
       btnTwoText: "Play Trailer",
     },
@@ -95,7 +95,7 @@ const heroOneData = {
       quality: "4k",
       title: "ENIGM OF SHADOWS",
       description:
-        "Enjoy your favorite moves, tv show, sports, news, Live event and entertainment streaming now!",
+        "",
       btnOneText: "Watch Now",
       btnTwoText: "Play Trailer",
     },

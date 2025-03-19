@@ -24,10 +24,7 @@ const menuOneData = {
       ],
     },
 
-    {
-      name: "Blogs",
-      href: "blog-two-column",
-    },
+ 
     {
       name: "FAQ",
       href: "faq",

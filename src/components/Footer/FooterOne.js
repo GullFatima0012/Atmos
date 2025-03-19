@@ -66,105 +66,14 @@ export default function FooterOne() {
                       </svg>
                     </Link>
                   </li>
-                  <li className="social-media--item">
-                    <Link href="#" className="social-media--link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <path
-                          d="M9.17139 0.726594C5.51213 0.222225 2.04172 2.49525 1.04069 6.05197C0.0396634 9.60872 1.81483 13.359 5.19965 14.8384C5.15522 14.2701 5.19569 13.6984 5.31972 13.1421C5.4563 12.5216 6.27859 9.10053 6.27859 9.10053C6.11473 8.73365 6.03278 8.3354 6.03845 7.9336C6.03845 6.83496 6.67237 6.01527 7.46108 6.01527C7.74773 6.011 8.02211 6.13167 8.21274 6.34587C8.40338 6.56007 8.49148 6.84665 8.45405 7.13096C8.45405 7.79696 8.02618 8.80453 7.80366 9.74943C7.71385 10.1011 7.79648 10.4745 8.02625 10.7554C8.25602 11.0362 8.60563 11.1911 8.96796 11.1726C10.3718 11.1726 11.3136 9.37375 11.3136 7.25052C11.3136 5.62249 10.2352 4.40433 8.24862 4.40433C7.2882 4.3672 6.35454 4.72549 5.66534 5.39565C4.97614 6.06581 4.59167 6.98929 4.60157 7.95069C4.58042 8.47834 4.75058 8.99585 5.08072 9.40793C5.20772 9.50241 5.25672 9.66968 5.20079 9.81779C5.16665 9.95436 5.08072 10.2789 5.04657 10.3984C5.03218 10.4802 4.97986 10.5503 4.90556 10.5873C4.83127 10.6244 4.74381 10.624 4.66986 10.5863C3.64557 10.1764 3.163 9.04926 3.163 7.76285C3.163 5.65665 4.92707 3.13494 8.45524 3.13494C11.2635 3.13494 13.13 5.18988 13.13 7.38709C13.13 10.2789 11.5202 12.4534 9.1404 12.4534C8.41751 12.4763 7.73301 12.1286 7.32511 11.5312C7.32511 11.5312 6.89716 13.2446 6.8129 13.569C6.64092 14.1289 6.38702 14.6603 6.0595 15.1458C6.74203 15.3529 7.45176 15.4565 8.16503 15.4533C10.1271 15.4545 12.0092 14.6753 13.3963 13.2871C14.7834 11.8989 15.5616 10.0158 15.5593 8.05316C15.5572 4.35814 12.8307 1.23096 9.17139 0.726594Z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </Link>
-                  </li>
-                  <li className="social-media--item">
-                    <Link href="#" className="social-media--link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="16"
-                        viewBox="0 0 14 16"
-                        fill="none"
-                      >
-                        <path
-                          d="M10.0452 5.27725V10.6445C10.0452 13.3004 7.81249 15.4534 5.0582 15.4534C2.30396 15.4534 0.0711975 13.3004 0.0711975 10.6445C0.0711975 7.98853 2.30396 5.83555 5.0582 5.83555C5.45433 5.83555 5.83963 5.88008 6.20905 5.96423V8.30422C5.86027 8.14442 5.47005 8.05504 5.0582 8.05504C3.57514 8.05504 2.37289 9.21436 2.37289 10.6445C2.37289 12.0745 3.57514 13.2339 5.0582 13.2339C6.54126 13.2339 7.74351 12.0745 7.74351 10.6445V0.656738H10.0452C10.0452 2.69972 11.7627 4.35589 13.8814 4.35589V6.57538C12.4298 6.57538 11.096 6.08952 10.0452 5.27725Z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </Link>
-                  </li>
-                  <li className="social-media--item">
-                    <Link href="#" className="social-media--link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="19"
-                        height="16"
-                        viewBox="0 0 19 16"
-                        fill="none"
-                      >
-                        <path
-                          d="M9.51528 0.656738C9.98947 0.659457 11.1759 0.671406 12.4364 0.724002L12.8834 0.744302C14.1525 0.806895 15.4206 0.913825 16.0496 1.0965C16.8885 1.342 17.5479 2.05833 17.7707 2.96636C18.1256 4.40827 18.17 7.22255 18.1755 7.9036L18.1763 8.04473V8.05463C18.1763 8.05463 18.1763 8.05805 18.1763 8.06462L18.1755 8.20575C18.17 8.8868 18.1256 11.7011 17.7707 13.143C17.5448 14.0543 16.8854 14.7707 16.0496 15.0128C15.4206 15.1955 14.1525 15.3024 12.8834 15.365L12.4364 15.3853C11.1759 15.4379 9.98947 15.4498 9.51528 15.4526L9.30717 15.4534H9.29793C9.29793 15.4534 9.29483 15.4534 9.2887 15.4534L9.08077 15.4526C8.07716 15.4469 3.8809 15.3996 2.5463 15.0128C1.70737 14.7673 1.04799 14.051 0.825102 13.143C0.470261 11.7011 0.425904 8.8868 0.420364 8.20575V7.9036C0.425904 7.22255 0.470261 4.40827 0.825102 2.96636C1.05108 2.05497 1.71046 1.33864 2.5463 1.0965C3.8809 0.709667 8.07716 0.662491 9.08077 0.656738H9.51528ZM7.52227 4.81772V11.2916L12.8493 8.05463L7.52227 4.81772Z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </Link>
-                  </li>
+              
                 </ul>
               </div>
             </div>
           </div>
           <div className="col-md-6 col-lg-4 col-xl-3">
             <div className="footer-widget">
-              <h4 className="widget-title text-uppercase lh-1">Browse categories</h4>
-              <ul className="footer-widget--list d-inline-block">
-                <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
-                    Action
-                  </Link>
-                </li>
-                <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link"style={{ textDecoration: "none", color: "inherit" }}>
-                    Comedy
-                  </Link>
-                </li>
-                <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link"style={{ textDecoration: "none", color: "inherit" }}>
-                    Crime
-                  </Link>
-                </li>
-                <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
-                    Romance
-                  </Link>
-                </li>
-              </ul>
-              <ul className="footer-widget--list d-inline-block ms-5">
-                <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
-                    Family
-                  </Link>
-                </li>
-                <li className="footer-widget--item">
-                  <Link href="category" style={{ textDecoration: "none", color: "inherit" }}className="footer-widget--link">
-                    Animation
-                  </Link>
-                </li>
-                <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
-                    Drama
-                  </Link>
-                </li>
-                <li className="footer-widget--item">
-                  <Link href="category" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
-                    Scientific
-                  </Link>
-                </li>
-              </ul>
+             
             </div>
           </div>
           <div className="col-md-6 col-lg-2">

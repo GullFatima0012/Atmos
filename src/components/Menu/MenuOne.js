@@ -161,7 +161,7 @@ export default function MenuOne() {
         <div className="nav-right-part nav-right-part-desktop d-inline-flex align-item-center ps-md-5 ps-3">
           <div className="position-relative d-inline-block">
             <div className="search ms-auto">
-              <button
+              {/* <button
                 className={`bg-transparent border-0 header_search_btn ${showBox ? "close" : ""}`}
                 onClick={toggleSearchBox}
               >
@@ -183,7 +183,7 @@ export default function MenuOne() {
                     fill="#fff"
                   ></path>
                 </svg>
-              </button>
+              </button> */}
             </div>
             {/* <!-- Search Box --> */}
             <div
