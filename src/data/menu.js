@@ -10,6 +10,10 @@ const menuOneData = {
       href: "/",
     },
     {
+      name: "About One",
+      href: "about",
+    },
+    {
       name: "Videos",
       href: "#",
       subMenus: [
