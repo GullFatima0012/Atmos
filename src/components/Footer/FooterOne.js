@@ -95,16 +95,8 @@ export default function FooterOne() {
                     Privacy Policy
                   </Link>
                 </li>
-                <li className="footer-widget--item">
-                  <Link href="faq" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
-                    Faq
-                  </Link>
-                </li>
-                <li className="footer-widget--item">
-                  <Link href="pricing" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
-                    Account & Billing
-                  </Link>
-                </li>
+             
+              
               </ul>
             </div>
           </div>
@@ -166,11 +158,11 @@ export default function FooterOne() {
                   Privacy Policy
                 </Link>
               </li>
-              <li className="footer-widget--item d-inline-block">
+              {/* <li className="footer-widget--item d-inline-block">
   <Link href="/" className="footer-widget--link" style={{ textDecoration: "none", color: "inherit" }}>
     Site Maps
   </Link>
-</li>
+</li> */}
 
             </ul>
           </div>

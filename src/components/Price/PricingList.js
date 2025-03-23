@@ -1,67 +1,61 @@
 import Image from "next/image";
+import { Container, Grid, Card, CardContent, Typography, Button } from "@mui/material";
 import pricing from "@/data/pricing";
 
 export default function PricingList() {
   return (
-    <div className="container">
-      <div className="row justify-content-center mb-30">
-        <div className="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-          <h3 className="section-title text-center">{pricing.title}</h3>
-          <p className="section-description text-center">
-            {pricing.description}
-          </p>
-        </div>
-      </div>
-      {pricing.items && pricing.items.length && (
-        <div className="row justify-content-center">
-          {pricing.items.map((item, index) => (
-            <div
-              key={index}
-              className="col-xxl-4 col-xl-5 col-lg-5 col-md-6 col-sm-10 mb-md-0 mb-4"
+    <Container maxWidth="lg" sx={{ py: 6, backgroundColor: "#F1EFE7", textAlign: "center" }}>
+      <Typography variant="h3" fontWeight={600} gutterBottom>
+        {pricing.title}
+      </Typography>
+      <Typography variant="subtitle1" color="text.secondary" paragraph>
+        {pricing.description}
+      </Typography>
+      
+      <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
+        {pricing.items?.map((item, index) => (
+          <Grid item key={index} xs={12} sm={6} md={4}>
+            <Card
+              sx={{
+                borderRadius: 3,
+                textAlign: "center",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                transition: "0.3s",
+                "&:hover": { transform: "scale(1.05)" },
+              }}
             >
-              <div
-                className="pricing-card"
-                style={{
-                  backgroundImage: "url('assets/images/pricing.webp')",
-                }}
-              >
-                <div className="pricing-card--header position-relative">
-                  <Image src={item.image} alt="regular" />
-                  <h4 className="title text-uppercase mt-3 mb-0">
-                    {item.title}
-                  </h4>
-                  <div className="price-badge position-absolute">
-                    <p className="price mb-2 lh-1">{item.price}</p>
-                    <p className="duration mb-0 lh-1">{item.type}</p>
-                  </div>
-                </div>
-                <div className="pricing-card--body">
-                  {item.features && item.features.length > 0 && (
-                    <ul className="pricing-card--list lh-1">
-                      {item.features.map((feature, key) => (
-                        <li key={key} className="service-item">
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  <button
-                    className="pricing-card--button lh-1 text-uppercase text-center d-block w-100"
-                    style={{
-                      backgroundImage: "url('assets/images/price-btn.webp')",
-                    }}
-                  >
-                    {item.btnText}
-                  </button>
-                  <p className="note text-center lh-1 mt-3 mb-0">
-                    {item.promotionText}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+              <Image src={item.image} alt={item.title} width={80} height={80} style={{ margin: "20px auto" }} />
+              <CardContent>
+                <Typography variant="h5" fontWeight={600} gutterBottom>
+                  {item.title}
+                </Typography>
+                <Typography variant="h4" color="primary" fontWeight={700}>
+                  {item.price}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" gutterBottom>
+                  {item.type}
+                </Typography>
+                <ul style={{ listStyle: "none", padding: 0, marginTop: 10 }}>
+                  {item.features?.map((feature, key) => (
+                    <li key={key} style={{ marginBottom: 5 }}>{feature}</li>
+                  ))}
+                </ul>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  sx={{ mt: 2, py: 1.5, fontSize: "1rem", fontWeight: 600 }}
+                >
+                  {item.btnText}
+                </Button>
+                <Typography variant="caption" display="block" color="text.secondary" sx={{ mt: 2 }}>
+                  {item.promotionText}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 }

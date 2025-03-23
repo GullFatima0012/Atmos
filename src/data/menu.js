@@ -9,29 +9,35 @@ const menuOneData = {
       name: "Home",
       href: "/",
     },
+
     {
-      name: "About One",
+      name: "Videos",
+      href: "movie-list",
+    
+
+   
+    },
+    // {
+    //   name: "Videos",
+    //   href: "#",
+    //   subMenus: [
+    //     {
+    //       name: "Videos List",
+    //       href: "movie-list",
+    //     },
+    //     {
+    //       name: "Movies Category",
+    //       href: "category",
+    //     },
+    //   ],
+    // },
+    {
+      name: "About ",
       href: "about",
     },
     {
-      name: "Videos",
-      href: "#",
-      subMenus: [
-        {
-          name: "Videos List",
-          href: "movie-list",
-        },
-        {
-          name: "Movies Category",
-          href: "category",
-        },
-      ],
-    },
-
- 
-    {
-      name: "FAQ",
-      href: "faq",
+      name: "Pricing",
+      href:"pricing",
     },
   ],
 };

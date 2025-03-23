@@ -5,7 +5,8 @@ import logo from "@/../public/assets/images/logo.svg";
 
 export default function FooterTwo() {
   return (
-    <footer className="footer-area footer-area--two pt-60">
+<footer className="footer-area footer-area--two pt-60" style={{ borderRadius: "0px",backgroundColor:"white" }}>
+
       <div className="hl-container">
         {/* <!-- Footer Top --> */}
         <div className="row footer-top align-items-center row-gap-4">

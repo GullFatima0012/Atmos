@@ -6,13 +6,14 @@ export default function About() {
   const breadcrumb = {
     title: "About Us",
     links: [
-      { name: "Home", href: "/" },
-      { name: "About Us", href: "#" },
+ 
     ],
   };
   return (
     <>
-      <HeaderOne data={{ breadcrumb: breadcrumb }} />
+    <HeaderOne style={{ color: "black" }} data={{ breadcrumb: breadcrumb }} />
+
+
       <main className="main">
         <AboutOne />
       </main>

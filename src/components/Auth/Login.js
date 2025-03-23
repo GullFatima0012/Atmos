@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useAtom } from "jotai";
 import { tokenAtom } from "@/atoms/authAtom";
 import { useRouter } from 'next/navigation';
+
 import { auth } from "@/lib/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -21,12 +22,15 @@ const validationSchema = yup.object({
 });
 
 export default function Signup() {
+  const router=useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [token, setToken] = useAtom(tokenAtom);
-  const router = useRouter();
+  
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-
+  const handleRelocate=()=>{
+    router.push('/');
+  }
   // Formik Hook
   const formik = useFormik({
     initialValues: {
@@ -57,9 +61,52 @@ export default function Signup() {
   });
 
   return (
-    <Box sx={{ width: "100vw", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", bgcolor: "#F5F3EB" }}>
-      <Paper elevation={0} sx={{ p: 4, textAlign: "center", borderRadius: 3, width: "100%", maxWidth: 400, bgcolor: "transparent" }}>
-        <Box display="flex" justifyContent="center" mb={2}>
+    <Box
+    sx={{
+      width: "100vw",
+      height: "100vh",
+      display: "flex",
+      alignItems: "center",
+      border: "10px solid",
+  borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
+      justifyContent: "center",
+      bgcolor: "#F5F3EB",
+      position: "relative", // ✅ Added for positioning the button
+    }}
+  >
+  {/* Back Button at Top-Left */}
+  <Button
+    variant="contained"
+    sx={{
+      position: "absolute", // ✅ Allows positioning
+      top: 20, // ✅ Distance from the top
+      left: 20, // ✅ Distance from the left
+      bgcolor: "black",
+      color: "white",
+      borderRadius: 2,
+      py: 1.2,
+      px: 2.6,
+      fontSize: 14,
+      fontWeight: "bold",
+      minWidth: "auto",
+    }}
+    onClick={handleRelocate}
+  >
+    Back
+  </Button>
+
+  {/* Centered Content */}
+  <Paper
+    elevation={0}
+    sx={{
+      p: 4,
+      textAlign: "center",
+      borderRadius: 3,
+      width: "100%",
+      maxWidth: 400,
+      bgcolor: "transparent",
+    }}
+  ><Box display="flex" justifyContent="center" mb={2}>
           <Image src={logo} alt="Logo" width={150} height={50} />
         </Box>
 
