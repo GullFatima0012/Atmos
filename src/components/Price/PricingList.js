@@ -4,8 +4,8 @@ import pricing from "@/data/pricing";
 
 export default function PricingList() {
   return (
-    <Container maxWidth="lg" sx={{ py: 6, backgroundColor: "#F1EFE7", textAlign: "center" }}>
-      <Typography variant="h3" fontWeight={600} gutterBottom>
+    <Container maxWidth="lg" sx={{  backgroundColor: "#F1EFE7", textAlign: "center" }}>
+      <Typography variant="h3" fontWeight={600} gutterBottom color="black">
         {pricing.title}
       </Typography>
       <Typography variant="subtitle1" color="text.secondary" paragraph>
