@@ -1,18 +1,13 @@
 import FooterOne from "@/components/Footer/FooterOne";
 import HeaderOne from "@/components/Header/HeaderOne";
 import PricingTwo from "@/components/Price/PriceingTwo";
+import { TextField, Button, Typography, Box, InputAdornment, IconButton, Container, Paper, Alert } from "@mui/material";
 
 export default function Playlist() {
-  const breadcrumb = {
-    title: "Pricing",
-    links: [
-      { name: "Home", href: "/" },
-      { name: "Pricing", href: "#" },
-    ],
-  };
+
   return (
     <>
-      <HeaderOne data={{ breadcrumb }} />
+      <HeaderOne/>
       {/* <!-- Start Main --> */}
       <main className="main">
         <PricingTwo />

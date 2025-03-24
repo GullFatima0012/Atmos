@@ -4,7 +4,7 @@ import privacy from "@/data/privacy";
 
 export default function PrivacyPolicyContent() {
   return (
-    <div className="genres-area" style={{ backgroundColor: "#F1EFE7", color: "black" }}>
+    <div className="genres-area" style={{  color: "black" }}>
     <div className="privacy-policy container py-80 p-80" style={{ color: "black" }}>
       <div className="row justify-content-between" style={{ color: "black" }}>
      

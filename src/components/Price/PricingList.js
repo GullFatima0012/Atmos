@@ -4,7 +4,7 @@ import pricing from "@/data/pricing";
 
 export default function PricingList() {
   return (
-    <Box  sx={{  backgroundColor: "#F1EFE7", textAlign: "center",py:"30px" }}>
+    <Box  sx={{  textAlign: "center",pt:"120px" }}>
       <Typography variant="h3" fontWeight={600} gutterBottom color="black">
         {pricing.title}
       </Typography>

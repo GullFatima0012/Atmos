@@ -74,17 +74,17 @@ export default function MovieList() {
 
   if (!token) {
     return (
-      <div className="genres-area py-80" style={{ backgroundColor: "#F1EFE7", color: "black" }}>
+      <div className="genres-area py-80" style={{ marginTop:"90px", color: "black" }}>
         <div className="container">
           <Box
             sx={{
               textAlign: "center",
               padding: "20px",
-              py: 2.2,
+              py: 2.9,
               px: 4.2,
-              mt: 5,
+              mt: 15,
               mb: 5,
-              backgroundColor: "#F1EFE7",
+          
               marginBottom: "20px",
             }}
           >
@@ -113,13 +113,13 @@ export default function MovieList() {
   }
 
   return (
-    <div className="genres-area py-80" style={{ backgroundColor: "#F1EFE7", color: "black" }}>
+    <div className="genres-area py-80 mt-50" style={{  color: "black" }}>
       <div className="container">
-        {message && <div style={{ backgroundColor: "#E5E4DC", borderRadius: "5px", textAlign: "center", fontWeight: "bold", color: "black", padding: "10px", marginBottom: "20px" }}>{message}</div>}
+        {message && <div style={{  borderRadius: "5px", textAlign: "center", fontWeight: "bold", color: "black", padding: "10px", marginBottom: "20px" }}>{message}</div>}
         {loading ? (
           <Loader />
         ) : movies.length > 0 ? (
-          <div className="row row-gap-4">
+          <div className="row row-gap-4 m-2">
             {movies.map((movie) => (
               <div key={movie.uri} className="col-lg-4 col-sm-6">
                 <MovieCard 

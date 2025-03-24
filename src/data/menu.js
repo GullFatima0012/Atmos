@@ -32,7 +32,7 @@ const menuOneData = {
     //   ],
     // },
     {
-      name: "About ",
+      name: "About Us ",
       href: "about",
     },
     {
