@@ -64,7 +64,7 @@ const handleRelocate=()=>{
     height: "100vh",
     display: "flex",
     alignItems: "center",
-    border: "10px solid",
+    border: "15px solid",
 borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
     justifyContent: "center",
     bgcolor: "#F5F3EB",

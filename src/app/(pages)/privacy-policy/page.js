@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
       <main className="main">
         <PrivacyPolicyContent />
       </main>
-      <FooterOne />
+    
     </>
   );
 }

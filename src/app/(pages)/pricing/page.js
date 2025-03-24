@@ -18,7 +18,6 @@ export default function Playlist() {
         <PricingTwo />
       </main>
 
-      <FooterOne />
     </>
   );
 }
