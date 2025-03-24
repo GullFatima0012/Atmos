@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { Container, Grid, Card, CardContent, Typography, Button } from "@mui/material";
+import { Container, Grid, Card, CardContent, Typography, Button,Box } from "@mui/material";
 import pricing from "@/data/pricing";
 
 export default function PricingList() {
   return (
-    <Container maxWidth="lg" sx={{  backgroundColor: "#F1EFE7", textAlign: "center" }}>
+    <Box  sx={{  backgroundColor: "#F1EFE7", textAlign: "center",py:"30px" }}>
       <Typography variant="h3" fontWeight={600} gutterBottom color="black">
         {pricing.title}
       </Typography>
@@ -56,6 +56,6 @@ export default function PricingList() {
           </Grid>
         ))}
       </Grid>
-    </Container>
+    </Box>
   );
 }
