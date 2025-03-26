@@ -231,7 +231,7 @@ export default function MenuOne() {
         // ✅ Show Logout button if token exists
         <Button 
           className="px-3 py-2" 
-          sx={{ textTransform: "none", borderRadius: "20px", color: "white", backgroundColor: "red" }}
+          sx={{ textTransform: "none", fontFamily: '"SF Pro Display", sans-serif',borderRadius: "20px", color: "white", backgroundColor: "red" }}
           onClick={handleLogout}
         >
           Logout
@@ -241,7 +241,7 @@ export default function MenuOne() {
         <Link href="/register" className="text-lowercase text-dark d-xl-inline-block d-none" style={{ borderRadius: "20px" }}>
           <Button 
             className="px-3 py-2" 
-            sx={{ textTransform: "none", borderRadius: "20px", color: "black", backgroundColor: "#F1EFE7" }}
+            sx={{ textTransform: "none",fontFamily: '"SF Pro Display", sans-serif', borderRadius: "20px", color: "black", backgroundColor: "#F1EFE7" }}
           >
             Get Started
           </Button>
