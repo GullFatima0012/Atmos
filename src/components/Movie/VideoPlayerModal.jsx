@@ -1,4 +1,3 @@
-// components/VideoPlayerModal.jsx
 "use client";
 
 import React, { useEffect } from "react";
@@ -25,9 +24,20 @@ export default function VideoPlayerModal({ video, onClose }) {
   }, []);
 
   return (
-    <div className="video-modal-overlay" onClick={onClose}>
-      <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-button" onClick={onClose}>×</button>
+    <div 
+      className="video-modal-overlay" 
+      onClick={onClose}
+    >
+      <div 
+        className="video-modal-content" 
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button 
+          className="close-button" 
+          onClick={onClose}
+        >
+          ×
+        </button>
         <div className="video-container">
           <iframe
             src={`https://player.vimeo.com/video/${videoId}?autoplay=1&title=0&byline=0&portrait=0`}
@@ -48,21 +58,24 @@ export default function VideoPlayerModal({ video, onClose }) {
           left: 0;
           right: 0;
           bottom: 0;
-     
           display: flex;
           justify-content: center;
           align-items: center;
           z-index: 1000;
+          background-color: rgba(0, 0, 0, 0.5); /* Darkened overlay */
+          backdrop-filter: blur(10px); /* Blur effect */
+          -webkit-backdrop-filter: blur(10px); /* For Safari support */
         }
         
         .video-modal-content {
           position: relative;
           width: 90%;
           max-width: 700px;
-          height: 60vh;
+          height: 80vh;
           background: black;
           border-radius: 8px;
           overflow: hidden;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds depth */
         }
         
         .close-button {

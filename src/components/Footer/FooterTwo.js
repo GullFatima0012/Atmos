@@ -5,11 +5,11 @@ import logo from "@/../public/assets/images/logo.svg";
 
 export default function FooterTwo() {
   return (
-<footer className="footer-area footer-area--two pt-60" style={{ borderRadius: "0px",backgroundColor:"white" }}>
+<footer className="footer-area footer-area--two pt-60" style={{ minWidth: '100%', borderRadius: "0px",backgroundColor:"white" }}>
 
-      <div className="hl-container">
+      <div className="hl-container" style={{ minWidth: '100%',border:'90px solid black'}}>
         {/* <!-- Footer Top --> */}
-        <div className="row footer-top align-items-center row-gap-4">
+        <div className="row footer-top align-items-center row-gap-4"style={{ minWidth: '100%',border:'90px solid black'}}>
           <div className="col-lg-5 text-lg-start text-center">
             <div className="footer-widget">
               <ul className="footer-widget--list d-inline-block lh-1">

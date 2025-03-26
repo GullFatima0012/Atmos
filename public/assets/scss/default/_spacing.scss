@@ -54,6 +54,15 @@ background-color: #F1EFE7;
   padding-top: 15px;
   padding-bottom: 15px;
 }
+.py-90 {
+  padding-top: 90px;
+  padding-bottom: 90px;
+
+  @media #{$lg-mobile} {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
 .py-80 {
   padding-top: 80px;
   padding-bottom: 80px;

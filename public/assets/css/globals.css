@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("./fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("./fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  /* Add more styles based on the fonts you have */
+  

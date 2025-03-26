@@ -74,10 +74,11 @@ export default function MovieList() {
 
   if (!token) {
     return (
-      <div className="genres-area py-80" style={{ marginTop:"90px", color: "black" }}>
+      <div className="genres-area" style={{  color: "black" }}>
         <div className="container">
-          <Box
+          <Box 
             sx={{
+              py: { xs: 4, sm: 4, md: 5, lg: 8 } ,
               textAlign: "center",
               padding: "20px",
               py: 2.9,
@@ -88,12 +89,14 @@ export default function MovieList() {
               marginBottom: "20px",
             }}
           >
-            <h6 style={{ color: "black" }}>You are not Authenticated. Please log in first.</h6>
+            <h6 style={{ color: "black" ,fontFamily: '"SF Pro Display", sans-serif' }}>You are not Authenticated. Please log in first.</h6>
             <Link href="/register" passHref>
               <Button
                 variant="contained"
+             
                 sx={{
                   bgcolor: "black",
+                  fontFamily: '"SF Pro Display", sans-serif' ,
                   color: "white",
                   mt: 2,
                   borderRadius: 2,

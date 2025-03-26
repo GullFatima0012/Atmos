@@ -7,6 +7,9 @@
     left: 0;
     top: 0;
   }
+  main {
+    flex: 1; /* This pushes the footer down */
+  }
   .nav-container {
     transition: all 0.4s;
     z-index: 999;

@@ -68,15 +68,26 @@ export default function Signup() {
       display: "flex",
       alignItems: "center",
       border: "15px solid",
-  borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
+      borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
       justifyContent: "center",
-      bgcolor: "#F5F3EB",
-      position: "relative", // ✅ Added for positioning the button
+      position: "relative",
     }}
   >
+    <Box
+      sx={{
+        width: "100%",
+        height: "100%",
+        bgcolor: "#F5F3EB",
+        borderRadius: "8px", // Added 5px border radius
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
   {/* Back Button at Top-Left */}
   <Button
     variant="contained"
+    fontFamily= '"SF Pro Display", sans-serif' 
     sx={{
       position: "absolute", // ✅ Allows positioning
       top: 20, // ✅ Distance from the top
@@ -110,16 +121,17 @@ export default function Signup() {
           <Image src={logo} alt="Logo" width={150} height={50} />
         </Box>
 
-        <Typography sx={{ color: "black" }} variant="h5" fontWeight="bold" mb={3}>
+        <Typography sx={{ color: "black" }}  fontFamily= '"SF Pro Display", sans-serif'  variant="h5" fontWeight="bold" mb={3}>
           Log in to Your Account
         </Typography>
 
-        {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
-        {success && <Alert severity="success" sx={{ mb: 2 }}>{success}</Alert>}
+        {error && <Alert severity="error"  fontFamily= '"SF Pro Display", sans-serif' sx={{ mb: 2 }}>{error}</Alert>}
+        {success && <Alert severity="success"  fontFamily= '"SF Pro Display", sans-serif' sx={{ mb: 2 }}>{success}</Alert>}
 
         <form onSubmit={formik.handleSubmit}>
           {/* Email Input */}
           <TextField
+           fontFamily= '"SF Pro Display", sans-serif' 
             fullWidth
             name="email"
             label="Email"
@@ -135,6 +147,7 @@ export default function Signup() {
           {/* Password Input */}
           <TextField
             fullWidth
+            fontFamily= '"SF Pro Display", sans-serif' 
             name="password"
             label="Password"
             type={showPassword ? "text" : "password"}
@@ -147,7 +160,7 @@ export default function Signup() {
             helperText={formik.touched.password && formik.errors.password}
             InputProps={{
               endAdornment: (
-                <InputAdornment position="end">
+                <InputAdornment  position="end">
                   <IconButton onClick={() => setShowPassword(!showPassword)}>
                     {showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
@@ -157,20 +170,21 @@ export default function Signup() {
           />
 
           {/* Submit Button */}
-          <Button type="submit" variant="contained" sx={{ bgcolor: "black", color: "white", borderRadius: 2, py: 2.2, px: 4.2, fontSize: 14, fontWeight: "bold", minWidth: "auto" }}>
+          <Button  fontFamily= '"SF Pro Display", sans-serif'  type="submit" variant="contained" sx={{ bgcolor: "black", color: "white", borderRadius: 2, py: 2.2, px: 4.2, fontSize: 14, fontWeight: "bold", minWidth: "auto" }}>
             Login
           </Button>
         </form>
 
-        <Typography variant="body2" mt={2} color="textSecondary">
+        <Typography variant="body2" fontFamily= '"SF Pro Display", sans-serif'  mt={2} color="textSecondary">
           Don't have an account?{" "}
-          <Link href="/register" passHref style={{ textDecoration: "none" }}>
-            <Typography component="span" sx={{ fontWeight: "bold", cursor: "pointer", color: "black" }}>
+          <Link fontFamily= '"SF Pro Display", sans-serif' href="/register" passHref style={{ textDecoration: "none" }}>
+            <Typography  fontFamily= '"SF Pro Display", sans-serif'  component="span" sx={{ fontWeight: "bold", cursor: "pointer", color: "black" }}>
               Sign Up
             </Typography>
           </Link>
         </Typography>
       </Paper>
+    </Box>
     </Box>
   );
 }

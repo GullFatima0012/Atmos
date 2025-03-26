@@ -10,7 +10,7 @@ export default function PriceOne() {
       display: "flex",
       alignItems: "center",
       border: "15px solid",
-  borderImage: "linear-gradient(to top left,rgba(147, 10, 10, 0.42), white) 1",
+  borderImage: "linear-gradient(to top left,rgba(0, 0, 0, 0.42), white) 1",
       justifyContent: "center",
       bgcolor: "#F5F3EB",
       position: "relative", // ✅ Added for positioning the button

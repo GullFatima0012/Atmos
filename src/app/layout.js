@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "glightbox/dist/css/glightbox.min.css";
 import "@/../public/assets/scss/style.scss";
+import '@/../public/assets/css/globals.css';
 
 import { Dosis, Jost, Big_Shoulders_Display } from "next/font/google";
 import localFont from "next/font/local";
@@ -106,9 +107,9 @@ export default function RootLayout({ children }) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="robots" content="noindex, follow" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="favicon.ico" sizes="any" />
-        <body
+        <body style={{ minWidth: '100%' }}
           className={`${lowball.variable} ${dosisSecondary.variable} ${dosisBody.variable} ${jost.variable} ${bigShouldersDisplay.variable}`}
         >
           {children}

@@ -7,28 +7,27 @@ export default function Movies() {
   return (
     <>
       <HeaderOne  />
-
-      {/* <!-- Start Main --> */}
-   
       <Box
   sx={{
-    maxWidth: "100%", // Prevents overflow
     width: "100vw",
-    height: "100%",
+    maxWidth: "100%",
+    minHeight: "100vh", // Changed from fixed height to minimum height
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
-    border: "15px solid black",
-borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
-    justifyContent: "center",
-    bgcolor: "#F5F3EB",
-    position: "relative", // ✅ Added for positioning the button
+    borderRadius: "10px",
+    border: "15px solid",
+    borderImage: "linear-gradient(to top left, rgba(112, 109, 109, 0.42), white) 1",
+    justifyContent: "flex-start", // Changed from center to flex-start
+    bgcolor: "#F1EFE7",
+    position: "relative",
+    overflow: "visible", // Allow content to overflow if needed
   }}
 >
-<main className="main">
-        <MovieList />
-  </main>
 
-</Box>
- </>
+        <MovieList />
+        <FooterOne />
+        </Box>
+        </>
   );
 }

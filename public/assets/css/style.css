@@ -20,23 +20,24 @@
 /*=========================
     Variables 
 ==========================*/
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=SF Pro Display:wght@200..800&display=swap");
 @import url("../webfonts/lowball-neue/stylesheet.css");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100..900display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap");
+@import url("fonts/SFPRODISPLAYREGULAR.OTF");
+
 :root {
   --primary-color: #fff;
   --secondary-color: #e2e2e2;
   --heading-color: #fff;
   --paragraph-color: #999;
   --body-bg: #fff !important;
-  --heading-font: "Lowball", sans-serif;
-  --secondary-font: "Dosis", sans-serif;
-  --body-font: "Dosis", sans-serif;
+  --heading-font: "SF Pro Display", sans-serif;
+  --secondary-font: "SF Pro Display", sans-serif;
+  --body-font: "SF Pro Display", sans-serif;
   --jost-font: "Jost", sans-serif;
   --bigShoulder-font: "Big Shoulders Display", sans-serif;
   --transition: all 300ms ease-out;
-  --bg-primary: linear-gradient(95deg, #181818 7.27%, #151515 99.21%);
+  --bg-primary: linear-gradient(95deg, #fdfdfd 7.27%, #f7f7f7 99.21%);
   
     --gradient-color: linear-gradient(to right, #F1EFE7 -5%,  #b9b9b9 31.0%,   #373737 );
     --bg-gradient: linear-gradient(
@@ -53,7 +54,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   overflow-x: hidden;
-  font-family: var(--body-font);
+  font-family:'"SF Pro Display", sans-serif';
 }
 .fullscreen-container {
   position: fixed; /* Sticks it to the viewport */
@@ -78,7 +79,7 @@ body {
   margin: 0;
   color: var(--primary-color);
   --body-bg: #fff !important;
-  font-family: var(--body-font);
+  font-family:'"SF Pro Display", sans-serif';
   font-weight: 400;
   font-size: 17px;
   max-width: 2000px;
@@ -122,7 +123,7 @@ h4,
 h5,
 h6 {
   color: var(--heading-color);
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-weight: 400;
 }
 
@@ -791,7 +792,7 @@ object {
   outline: none;
 }
 .hl-input-field::placeholder {
-  font-family: var(--body-font);
+  font-family:'"SF Pro Display", sans-serif';
   line-height: 1;
   font-size: 16px;
 }
@@ -802,7 +803,7 @@ object {
   padding: 30px;
 }
 .cmnt-reply-form label {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 18px;
   line-height: 1;
   text-transform: uppercase;
@@ -887,7 +888,7 @@ object {
   text-transform: uppercase;
 }
 .section-title--two {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-weight: 900;
 }
 .section-title.large {
@@ -915,7 +916,7 @@ object {
 
 .section-description {
   color: #e2e2e2;
-  font-family: var(--jost-font);
+  font-family: '"SF Pro Display", sans-serif';
   line-height: 24px;
 }
 
@@ -981,12 +982,12 @@ object {
   transition: 0.4s;
 }
 .home-one-icon-box h3 {
-  font-family: var(--heading-font) !important;
+  font-family: '"SF Pro Display", sans-serif' !important;
   letter-spacing: 1px;
   letter-spacing: 1px !important;
 }
 .home-one-icon-box p {
-  font-family: var(--body-font) !important;
+  font-family:'"SF Pro Display", sans-serif' !important;
   word-break: auto-phrase;
   font-size: 17px;
 }
@@ -1278,6 +1279,7 @@ object {
     width: 215px;
   }
 }
+
 .nav-right-part .header_search_box .header_search_form button {
   box-shadow: none;
   border: 0;
@@ -1311,7 +1313,8 @@ object {
   background: linear-gradient(180deg, rgba(255, 249, 249, 0.8) 0%, rgba(255, 249, 249, 0.8) 0%);
   backdrop-filter: blur(10px);
   padding: 20px 40px;
-  max-width: 1400px;
+  width:100%;
+
 }
 @media only screen and (max-width: 575px) {
   .navbar-area .nav-container {
@@ -1362,7 +1365,7 @@ object {
   line-height: 1;
 }
 .navbar-area .nav-container .main-menu .menu-item .menu-link {
-  font-family: var(--body-font);
+  font-family:'"SF Pro Display", sans-serif';
   color: var(--heading-color);
   display: flex;
   align-items: center;
@@ -1479,7 +1482,7 @@ object {
   overflow: hidden;
 }
 .primary-nav--link .link-text {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 18px;
   flex-shrink: 0;
 }
@@ -1529,7 +1532,7 @@ object {
   justify-content: flex-end;
 }
 .secondary-nav--right .hl-btn {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
 }
 .secondary-nav--right .profile-btn {
   width: 60px;
@@ -1814,7 +1817,7 @@ object {
   margin-bottom: 15px;
 }
 .mobile_menu_nav ul.menu_list li a {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 35px;
   font-weight: 600;
   position: relative;
@@ -1880,7 +1883,7 @@ object {
   padding-left: 0;
   padding-right: 18px;
   color: #999;
-  font-family: Dosis;
+  font-family: '"SF Pro Display", sans-serif';
 }
 .mobile_menu_nav .menu-item-has-children .sub-menu li a:hover, .mobile_menu_nav .menu-item-has-children .sub-menu li a.current {
   padding-left: 7px;
@@ -1971,7 +1974,7 @@ object {
 }
 
 .hl-pagination {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 25px;
   display: flex;
   align-items: center;
@@ -2042,7 +2045,7 @@ object {
 }
 .privacy-policy .table-content .content-item {
   color: #e2e2e2;
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 18px;
   line-height: 1;
   text-transform: uppercase;
@@ -2079,7 +2082,7 @@ object {
 }
 
 .enjoy-favourite-device .responsive--title {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 70px;
   font-weight: 900;
   line-height: 80px;
@@ -2097,7 +2100,7 @@ object {
   }
 }
 .enjoy-favourite-device .responsive--description {
-  font-family: var(--jost-font);
+  font-family: '"SF Pro Display", sans-serif';
   line-height: 25px;
 }
 
@@ -2121,7 +2124,7 @@ a.hl-btn:link,
 button.hl-btn:link,
 a.hl-btn:active,
 button.hl-btn:active {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -2372,7 +2375,7 @@ button.hl-btn:active span {
 .btn-base {
   font-weight: 600;
   position: relative;
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   letter-spacing: 1px;
 background-size: 200% 100%;
   moz-transition: all 0.4s ease-in-out;
@@ -2546,10 +2549,10 @@ background-size: 200% 100%;
   margin-right: 12px;
 }
 .movie-card-small .details.details-two {
-  font-family: var(--jost-font);
+  font-family: '"SF Pro Display", sans-serif';
 }
 .movie-card-small .details.details-two .movie-name {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 35px;
   font-weight: bold;
 }
@@ -2563,7 +2566,7 @@ background-size: 200% 100%;
   left: -1px;
   background-color: var(--body-bg);
   text-align: center;
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 45px;
   font-weight: 600;
   line-height: 1;
@@ -3148,7 +3151,7 @@ background-size: 200% 100%;
   }
 }
 .rotate-movie-card .card-title {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 80px;
   font-weight: 900;
   margin-bottom: 22px;
@@ -3170,7 +3173,7 @@ background-size: 200% 100%;
   color: #e2e2e2;
 }
 .rotate-movie-card .card-description {
-  font-family: var(--jost-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 20px;
   line-height: 34px;
 }
@@ -3378,7 +3381,7 @@ background-size: 200% 100%;
   font-weight: 500;
   line-height: 27px;
   margin-bottom: 30px;
-  font-family: var(--body-font);
+  font-family:'"SF Pro Display", sans-serif';
   word-break: auto-phrase;
   color: #e2e2e2;
 }
@@ -3415,7 +3418,7 @@ background-size: 200% 100%;
   position: relative;
 }
 .home-one-slider .slider-counter .count {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 60px;
   color: #fff;
   line-height: 1;
@@ -3574,7 +3577,7 @@ background-size: 200% 100%;
   }
 }
 .home-two-slider .content .banner-title {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 150px;
   font-weight: 900;
   line-height: 155px;
@@ -3606,7 +3609,7 @@ background-size: 200% 100%;
   }
 }
 .home-two-slider .content .banner-description {
-  font-family: var(--jost-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 22px;
   line-height: 34px;
 }
@@ -3643,7 +3646,7 @@ background-size: 200% 100%;
   }
 }
 .home-two-slider .content .movie-info-list {
-  font-family: var(--jost-font);
+  font-family: '"SF Pro Display", sans-serif';
 }
 .home-two-slider .content .movie-info-list--item {
   color: #e2e2e2;
@@ -3657,7 +3660,7 @@ background-size: 200% 100%;
   }
 }
 .home-two-slider .content .hl-btn {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   letter-spacing: 0.9px;
 }
 @media only screen and (max-width: 1199px) {
@@ -3667,7 +3670,7 @@ background-size: 200% 100%;
 }
 
 .slider-counter-two {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   line-height: 0;
   display: inline-flex;
   align-items: baseline;
@@ -3721,7 +3724,7 @@ background-size: 200% 100%;
   align-items: center;
 }
 .scroll-down .text {
-  font-family: var(--body-font);
+  font-family:'"SF Pro Display", sans-serif';
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
@@ -3857,7 +3860,7 @@ background-size: 200% 100%;
   }
 }
 .hero-card-slider .hero-card-slider-control .swiper-pagination .swiper-pagination-current {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 60px;
 }
 .hero-card-slider .hero-card-slider-control .swiper-pagination .swiper-pagination-current:before {
@@ -3868,10 +3871,10 @@ background-size: 200% 100%;
   bottom: -13px;
   height: 54px;
   background-color: #fff;
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
 }
 .hero-card-slider .hero-card-slider-control .swiper-pagination .swiper-pagination-total {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-weight: 500;
 }
 .hero-card-slider .hero-card-slider-control .swiper-pagination .swiper-pagination-total {
@@ -3954,8 +3957,9 @@ background-size: 200% 100%;
 }
 
 .category-list-area .header {
+  border: 3px solid pink;
   padding-bottom: 20px;
-  border-bottom: 1px solid #201f1f;
+
 }
 .category-list-area .category-list--item {
   align-items: center;
@@ -4205,7 +4209,7 @@ background-size: 200% 100%;
 
 .pricing-card {
   color: #fff;
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   background-size: 100% 100%;
   padding: 0 3px;
 }
@@ -4221,7 +4225,7 @@ background-size: 200% 100%;
   }
 }
 .pricing-card--header .title {
-  font-family: var(--bigShoulder-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-weight: 700;
 }
 @media only screen and (max-width: 991px) {
@@ -4261,7 +4265,7 @@ background-size: 200% 100%;
 }
 .pricing-card--header .price-badge .duration {
   color: #e2e2e2;
-  font-family: var(--jost-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 14px;
   transform: rotate(18deg);
 }
@@ -4320,7 +4324,7 @@ background-size: 200% 100%;
 }
 .pricing-card .note {
   color: var(--paragraph-color);
-  font-family: var(--jost-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 14px;
   font-weight: 300;
 }
@@ -4423,7 +4427,7 @@ background-size: 200% 100%;
 }
 
 .movie-details .description {
-  font-family: Dosis;
+  font-family: SF Pro Display;
   font-size: 20px;
   line-height: 27px;
 }
@@ -4433,7 +4437,7 @@ background-size: 200% 100%;
   }
 }
 .movie-details .movie-production .list {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 25px;
   text-transform: uppercase;
 }
@@ -4563,7 +4567,7 @@ background-size: 200% 100%;
   }
 }
 .playlist--item .remove-btn {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   display: flex;
   align-items: center;
   padding: 17.5px 31px;
@@ -4689,7 +4693,7 @@ background-size: 200% 100%;
 }
 
 .blog {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   border-radius: 30px;
   overflow: hidden;
 }
@@ -4791,7 +4795,7 @@ background-size: 200% 100%;
 }
 
 .blog-details .text-block {
-  font-family: var(--body-font);
+  font-family:'"SF Pro Display", sans-serif';
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 0.9px;
@@ -4806,7 +4810,7 @@ background-size: 200% 100%;
   font-size: 30px;
   line-height: 1;
   color: #e2e2e2;
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
 }
 .blog-details .quotation {
   padding: 40px;
@@ -4818,7 +4822,7 @@ background-size: 200% 100%;
   }
 }
 .blog-details .quotation--quote {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   font-size: 45px;
   line-height: 1.1;
 }
@@ -4849,7 +4853,7 @@ background-size: 200% 100%;
 }
 
 .blog-sidebar {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
   background: var(--bg-primary);
   border-radius: 20px;
   padding: 20px;
@@ -4901,7 +4905,7 @@ background-size: 200% 100%;
   margin: 20px 0;
 }
 .blog-sidebar .recent-post {
-  font-family: var(--heading-font);
+  font-family: '"SF Pro Display", sans-serif';
 }
 .blog-sidebar .recent-post .thumb {
   border-radius: 10px;
@@ -4921,7 +4925,7 @@ background-size: 200% 100%;
   margin-bottom: 5px;
 }
 .blog-sidebar .category-list .category-link {
-  font-family: var(--body-font);
+  font-family:'"SF Pro Display", sans-serif';
   color: var(--paragraph-color);
   display: inline-block;
   padding: 12px 12px;

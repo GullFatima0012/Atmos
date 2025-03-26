@@ -52,14 +52,14 @@ export default function MenuOne() {
   };
 
   return (
-    <div className="container nav-container position-absolute top-0 start-50 translate-middle-x lh-1">
+    <div style={{ minWidth: '100%' ,  fontFamily: '"SF Pro Display", sans-serif'  }} className=" Font-family container nav-container position-absolute top-0 start-50 translate-middle-x lh-1">
       <div className="d-flex align-items-center justify-content-between pt-lg-0 pb-lg-0 pt-4 pb-4">
         <Link href="/" className="main-logo me-lg-5 flex-shrink-0">
           <Image src={data.logo} alt="img" />
         </Link>
-        <nav className="navbar-nav m-auto d-lg-inline-block d-none">
+        <nav className=" Font-family navbar-nav m-auto d-lg-inline-block d-none" sx={{ fontFamily: '"SF Pro Display", sans-serif'}}>
           {data.menus && data.menus.length > 0 && (
-            <ul className="main-menu d-flex">
+            <ul className="main-menu d-flex Font-family" sx={{ fontFamily: '"SF Pro Display", sans-serif'}}>
               {data.menus.map((menu, index) => (
                 <li
                   key={index}
@@ -115,10 +115,11 @@ export default function MenuOne() {
                     )}
                   </Link>
                   {menu.subMenus && menu.subMenus.length > 0 && (
-                    <ul className="sub-menu">
+                    <ul className="sub-menu" sx={{ fontFamily: '"SF Pro Display", sans-serif'}}>
                       {menu.subMenus.map((subMenu, key) => (
                         <li
                           key={key}
+                          sx={{ fontFamily: '"SF Pro Display", sans-serif'}}
                           className={`sub-menu--item ${
                             subMenu.subMenus &&
                             subMenu.subMenus.length > 0 &&
@@ -127,6 +128,7 @@ export default function MenuOne() {
                         >
                           <Link
                             href={subMenu.href}
+                            sx={{ fontFamily: '"SF Pro Display", sans-serif'}}
                             className={`sub-menu--link ${
                               routePath == subMenu.href ? "active" : ""
                             }`}
@@ -134,11 +136,12 @@ export default function MenuOne() {
                             {subMenu.name}
                           </Link>
                           {subMenu.subMenus && subMenu.subMenus.length > 0 && (
-                            <ul className="sub-menu">
+                            <ul className="sub-menu" sx={{ fontFamily: '"SF Pro Display", sans-serif'}}>
                               {subMenu.subMenus.map((subMenuItem, i) => (
-                                <li key={i} className="sub-menu--item">
+                                <li key={i} sx={{ fontFamily: '"SF Pro Display", sans-serif'}} className="sub-menu--item">
                                   <Link
                                     href={subMenuItem.href}
+                                    sx={{ fontFamily: '"SF Pro Display", sans-serif'}}
                                     className={`sub-menu--link ${
                                       routePath == subMenuItem.href ? "active" : ""
                                     }`}

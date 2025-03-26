@@ -58,23 +58,34 @@ const handleRelocate=()=>{
   });
 
   return (
-   <Box
+<Box
   sx={{
     width: "100vw",
     height: "100vh",
     display: "flex",
     alignItems: "center",
     border: "15px solid",
-borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
+    borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
     justifyContent: "center",
-    bgcolor: "#F5F3EB",
-    position: "relative", // ✅ Added for positioning the button
+    position: "relative",
   }}
 >
+  <Box
+    sx={{
+      width: "100%",
+      height: "100%",
+      bgcolor: "#F5F3EB",
+      borderRadius: "8px", // Added 5px border radius
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
 
   {/* Back Button at Top-Left */}
   <Button
     variant="contained"
+    fontFamily= '"SF Pro Display", sans-serif' 
     sx={{
       position: "absolute", // ✅ Allows positioning
       top: 20, // ✅ Distance from the top
@@ -110,13 +121,13 @@ borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
           <Image src={logo} alt="Logo" width={150} height={50} />
         </Box>
 
-        <Typography variant="h5" sx={{ color: "black" }} fontWeight="bold" mb={3}>
+        <Typography variant="h5" sx={{ color: "black" }} fontFamily= '"SF Pro Display", sans-serif' fontWeight="bold" mb={3}>
           Create an Account
         </Typography>
 
         {/* Alert Message */}
         {alertMessage && (
-          <Alert severity={alertType} sx={{ my: 2 }}>
+          <Alert fontFamily= '"SF Pro Display", sans-serif'  severity={alertType} sx={{ my: 2 }}>
             {alertMessage}
           </Alert>
         )}
@@ -124,6 +135,7 @@ borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
         {/* Email Input */}
         <TextField
           fullWidth
+          fontFamily= '"SF Pro Display", sans-serif' 
           name="email"
           label="Username or Email"
           variant="outlined"
@@ -137,6 +149,7 @@ borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
 
         {/* Password Input */}
         <TextField
+        fontFamily= '"SF Pro Display", sans-serif' 
           fullWidth
           name="password"
           label="Password"
@@ -161,6 +174,7 @@ borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
 
         {/* Confirm Password Input */}
         <TextField
+        fontFamily= '"SF Pro Display", sans-serif' 
           fullWidth
           name="confirmPassword"
           label="Confirm Password"
@@ -186,8 +200,10 @@ borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
         {/* Submit Button */}
         <Button
           variant="contained"
+          fontFamily= '"SF Pro Display", sans-serif' 
           sx={{
             bgcolor: "black",
+         
             color: "white",
             borderRadius: 2,
             py: 1.2,
@@ -203,14 +219,15 @@ borderImage: "linear-gradient(to top left,rgba(112, 109, 109, 0.42), white) 1",
 
         {/* Login Link */}
         <Link href="/login" passHref>
-          <Typography variant="body2" mt={2} color="textSecondary">
+          <Typography variant="body2" mt={2} color="textSecondary" fontFamily= '"SF Pro Display", sans-serif' >
             Already have an account?{" "}
-            <Typography component="span" sx={{ fontWeight: "bold", cursor: "pointer", color: "black" }}>
+            <Typography  fontFamily= '"SF Pro Display", sans-serif' component="span" sx={{ fontWeight: "bold", cursor: "pointer", color: "black" }}>
               Login
             </Typography>
           </Typography>
         </Link>
       </Paper>
     </Box>
+      </Box>
   );
 }
