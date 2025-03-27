@@ -26,6 +26,7 @@ const FooterOne = () => {
     <footer 
       style={{
         width: '100%', // Changed from 'vw' to '%'
+        marginTop: 'auto',
         fontFamily: '"SF Pro Display", sans-serif' ,
         backgroundColor: '#F1EFE7', 
         borderRadius: '10px', 

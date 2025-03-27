@@ -109,7 +109,7 @@ export default function RootLayout({ children }) {
 
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="favicon.ico" sizes="any" />
-        <body style={{ minWidth: '100%' }}
+        <body style={{ minWidth: '100%',backgroundColor:'transparent' }}
           className={`${lowball.variable} ${dosisSecondary.variable} ${dosisBody.variable} ${jost.variable} ${bigShouldersDisplay.variable}`}
         >
           {children}

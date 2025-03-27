@@ -218,7 +218,7 @@ const handleRelocate=()=>{
         </Button>
 
         {/* Login Link */}
-        <Link href="/login" passHref>
+        <Link href="/login" style={{textDecoration:'none'}} passHref>
           <Typography variant="body2" mt={2} color="textSecondary" fontFamily= '"SF Pro Display", sans-serif' >
             Already have an account?{" "}
             <Typography  fontFamily= '"SF Pro Display", sans-serif' component="span" sx={{ fontWeight: "bold", cursor: "pointer", color: "black" }}>
