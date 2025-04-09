@@ -118,7 +118,7 @@ export default function MovieList() {
   return (
     <div className="genres-area py-80 mt-50" style={{  color: "black" }}>
       <div className="container">
-        {message && <div style={{  borderRadius: "5px", textAlign: "center", fontWeight: "bold", color: "black", padding: "10px", marginBottom: "20px" }}>{message}</div>}
+        {message && <div style={{  marginTop:"10px",borderRadius: "5px", textAlign: "center", fontWeight: "bold", color: "black", padding: "10px", marginBottom: "20px" }}>{message}</div>}
         {loading ? (
           <Loader />
         ) : movies.length > 0 ? (

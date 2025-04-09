@@ -18,72 +18,93 @@ export default function MovieCard({ movie, onClick }) {
         </div>
       </div>
       <h3 style={{color:"black"}}className="movie-title">{movie.name}</h3>
-    <p className="fw-medium lh-1  px-2" style={{textAlign: "justify",}}>{movie.description}</p>
+    <p className="movie-description fw-medium lh-1  px-2" style={{textAlign: "justify",}}>{movie.description}</p>
       <p className="movie-duration">{formatDuration(movie.duration)}</p>
 
       <style jsx>{`
-        .movie-card {
-          cursor: pointer;
-          transition: transform 0.3s;
-          border-radius: 8px;
-          overflow: hidden;
-          background: white;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .movie-card:hover {
-          transform: translateY(-5px);
-        }
-        
-        .movie-thumbnail {
-          position: relative;
-          width: 100%;
-          height: 0;
-          padding-bottom: 56.25%; /* 16:9 aspect ratio */
-          overflow: hidden;
-        }
-        
-        .movie-thumbnail img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-        
-        .play-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: rgba(0, 0, 0, 0.3);
-          opacity: 0;
-          transition: opacity 0.3s;
-        }
-        
-        .movie-card:hover .play-overlay {
-          opacity: 1;
-        }
-        
-        .movie-title {
-          padding: 12px 16px 4px;
-          font-size: 16px;
-          font-weight: 600;
-          margin: 0;
-        }
-        
-        .movie-duration {
-          padding: 0 16px 12px;
-          font-size: 14px;
-          color: #666;
-          margin: 0;
-        }
-      `}</style>
+  .movie-card {
+    cursor: pointer;
+    transition: transform 0.3s;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .movie-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .movie-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+  }
+
+  .movie-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .movie-card:hover .play-overlay {
+    opacity: 1;
+  }
+
+  .movie-title {
+    padding: 12px 16px 4px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .movie-description {
+    color: #333;
+    padding: 0 16px 8px;
+    font-size: 14px;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .movie-card:hover .movie-description {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    background: white;
+    z-index: 10;
+  }
+
+  .movie-duration {
+    padding: 0 16px 12px;
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+`}</style>
+
     </div>
   );
 }
