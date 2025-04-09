@@ -23,6 +23,7 @@ export default function MovieCard({ movie, onClick }) {
 
       <style jsx>{`
   .movie-card {
+  height: 300px; /* Or whatever fixed height you want */
     cursor: pointer;
     transition: transform 0.3s;
     border-radius: 8px;
@@ -32,7 +33,9 @@ export default function MovieCard({ movie, onClick }) {
   }
 
   .movie-card:hover {
+    height: auto; /* Auto height on hover */
     transform: translateY(-5px);
+     z-index: 20; /* Ensure it appears above other cards */
   }
 
   .movie-thumbnail {
