@@ -4,6 +4,7 @@
 import React from "react";
 
 export default function MovieCard({ movie, onClick }) {
+  
   // Extract thumbnail from movie data - adjust this based on your actual Vimeo API response structure
   const thumbnail = movie.pictures?.sizes?.[3]?.link || "/default-thumbnail.jpg";
 

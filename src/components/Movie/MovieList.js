@@ -58,7 +58,14 @@ export default function MovieList() {
 
       const data = await response.json();
       if (data?.data?.length > 0) {
-        setMovies(data.data);
+  
+    // Filter out movies with "stunt-1083" in their name
+const filteredMovies = data.data.filter(movie => 
+  !movie.name || !movie.name.toLowerCase().includes("stunt-1083")
+);
+
+// Set the filtered movies in state
+setMovies(filteredMovies);
         setMessage("Enjoy watching your videos!");
       }
     } catch (err) {
