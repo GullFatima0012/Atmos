@@ -17,7 +17,8 @@ export default function MovieCard({ movie, onClick }) {
           </svg>
         </div>
       </div>
-      <h3 className="movie-title">{movie.name}</h3>
+      <h3 style={{color:"black"}}className="movie-title">{movie.name}</h3>
+    <p className="fw-medium lh-1  px-2" style={{textAlign: "justify",}}>{movie.description}</p>
       <p className="movie-duration">{formatDuration(movie.duration)}</p>
 
       <style jsx>{`
